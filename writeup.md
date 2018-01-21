@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[grayscale]: ./examples/grayscale.jpg "Grayscale"
+[grayscale]: ./examples_pipeline/grayscale.jpg "Grayscale"
 [canny]: ./examples_pipeline/canny.jpg "Canny"
 [masked]: ./examples_pipeline/mask.jpg "Masked"
 [hough]: ./examples_pipeline/hough.jpg "Hough"
@@ -29,20 +29,20 @@ The goals / steps of this project are the following:
 
 My pipeline consisted of 5 steps. 
 
-![grayscale][grayscale]
 1. Convert to grayscale
+![grayscale][grayscale]
 
-![canny][canny]
 2. Apply Canny edge detection (based on gradient in the image)
+![canny][canny]
 
-![masked][masked]
 3. Unmask parts of the images that are not relevant
+![masked][masked]
 
-![hough][hough]
 4. Apply Hough Transform (detect straigt lines)
+![hough][hough]
 
-![final][final]
 5. Combine the relevant lines to 1 main lines for the left line and one for the right
+![final][final]
 
 For step 1. till. 4. I have used the settings that were found during the lessons. The parameters I have found there, were also very succesful with:
 
