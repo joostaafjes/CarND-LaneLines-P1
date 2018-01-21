@@ -20,21 +20,29 @@ The goals / steps of this project are the following:
 ### 1. Pipeline.
 
 My pipeline consisted of 5 steps. 
+
 [image1]: ./examples_pipeline/grayscale.jpg "Grayscale"
 1. Convert to grayscale
+
 [image2]: ./examples_pipeline/canny.jpg "Canny"
 2. Apply Canny edge detection (based on gradient in the image)
+
 [image3]: ./examples_pipeline/mask.jpg "Masked"
 3. Unmask parts of the images that are not relevant
+
 [image4]: ./examples_pipeline/hough.jpg "Hough"
 4. Apply Hough Transform (detect straigt lines)
+
 [image5]: ./examples_pipeline/final.jpg "Final"
 5. Combine the relevant lines to 1 main lines for the left line and one for the right
 
 For step 1. till. 4. I have used the settings that were found during the lessons. The parameters I have found there, were also very succesful with:
-a. the sample images that were in the test_images directory. Please check the notebook (or the test_images_output)
-b. the solidWhiteRight.mp4 video
-c. the solidYellowLeft.mp4 video
+
+A. the sample images that were in the test_images directory. Please check the notebook (or the test_images_output)
+
+B. the solidWhiteRight.mp4 video
+
+C. the solidYellowLeft.mp4 video
 
 ## 2. Draw_lines
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
@@ -83,12 +91,15 @@ Possible improvements could be:
 ## Final videos
 
 1. Solid white right lane
+
 [![Solid white right lane](https://img.youtube.com/vi/lgqsa1rrIg0/0.jpg)](https://www.youtube.com/watch?v=lgqsa1rrIg0)
 
 2. Solid yellow left lane
+
 [![Solid yellow left line](https://img.youtube.com/vi/5oZ21K6bMeQ/0.jpg)](https://www.youtube.com/watch?v=5oZ21K6bMeQ)
 
 3. Challenge
+
 [![Challenge](https://img.youtube.com/vi/OY0xBk-eSqs/0.jpg)](https://www.youtube.com/watch?v=OY0xBk-eSqs)
 
 ## Files
