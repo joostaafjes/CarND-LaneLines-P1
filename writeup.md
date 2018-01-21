@@ -27,7 +27,7 @@ The goals / steps of this project are the following:
 
 ### 1. Pipeline.
 
-My pipeline consisted of 5 steps. 
+My pipeline consists of 5 steps. 
 
 1. Convert to grayscale
 ![grayscale][grayscale]
@@ -44,7 +44,7 @@ My pipeline consisted of 5 steps.
 5. Combine the relevant lines to 1 main lines for the left line and one for the right
 ![final][final]
 
-For step 1. till. 4. I have used the settings that were found during the lessons. The parameters I have found there, were also very succesful with:
+For step 1. till. 4. I have used the settings that were found during the lessons. The parameters I have found there, were also succesful with:
 
 A. the sample images that were in the test_images directory. Please check the notebook (or the test_images_output)
 
@@ -53,9 +53,8 @@ B. the solidWhiteRight.mp4 video
 C. the solidYellowLeft.mp4 video
 
 ## 2. Draw_lines
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
-1. Input were the lines found by the Hough Transform
-2. Based on the x1, I splited all points into left lanes and right lanes points.
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function as follows:
+1. Based on the x1, I splited all points into left lanes and right lanes points. Later I improved this by also looking at the sloop.
 3. For both group of points, I calculated the best 1st degreee/linear function
 4. With this function, I calculated the full line from the bottom of the image till appr. halfway the image
 
