@@ -21,6 +21,10 @@ The goals / steps of this project are the following:
 
 My pipeline consisted of 5 steps. 
 
+[//]: # (Image References)
+
+[image1]: ./examples/grayscale.jpg "Grayscale"
+
 [image1]: ./examples_pipeline/grayscale.jpg "Grayscale"
 1. Convert to grayscale
 
