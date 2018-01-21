@@ -254,12 +254,12 @@ mask2_center = 650
 mask2_right = 900
 mask2_top = 450
 
-#for time, frame in clip1.iter_frames(with_times=True):
-#    frame_shape = frame.shape
-#    process_image(frame, time, save=True)
+for time, frame in clip1.iter_frames(with_times=True):
+    frame_shape = frame.shape
+    process_image(frame, time, save=True)
 
-white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
-white_clip.write_videofile(white_output, audio=False)
+#white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
+#white_clip.write_videofile(white_output, audio=False)
 
 top_y = 330
 top_x_left = 460
@@ -278,13 +278,13 @@ mask2_top = 400
 input_file_name = 'solidWhiteRight'
 clip1 = VideoFileClip("test_videos/" + input_file_name + ".mp4").subclip(time_start, time_end)
 white_output = 'test_videos_output/' + input_file_name + "_%0.2f_%0.2f.mp4" % (time_start, time_end)
-white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
-white_clip.write_videofile(white_output, audio=False)
+# white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
+# white_clip.write_videofile(white_output, audio=False)
 
 
 time_end = 27
 input_file_name = 'solidYellowLeft'
 clip1 = VideoFileClip("test_videos/" + input_file_name + ".mp4").subclip(time_start, time_end)
 white_output = 'test_videos_output/' + input_file_name + "_%0.2f_%0.2f.mp4" % (time_start, time_end)
-white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
-white_clip.write_videofile(white_output, audio=False)
+# white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
+# white_clip.write_videofile(white_output, audio=False)

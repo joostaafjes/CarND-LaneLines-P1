@@ -11,10 +11,8 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
+---
+[This is a link to notebook of this exercise saved as html](P1.html)
 ---
 
 ## Reflection
@@ -22,10 +20,15 @@ The goals / steps of this project are the following:
 ### 1. Pipeline.
 
 My pipeline consisted of 5 steps. 
+[image1]: ./examples_pipeline/grayscale.jpg "Grayscale"
 1. Convert to grayscale
+[image2]: ./examples_pipeline/canny.jpg "Canny"
 2. Apply Canny edge detection (based on gradient in the image)
+[image3]: ./examples_pipeline/mask.jpg "Masked"
 3. Unmask parts of the images that are not relevant
+[image4]: ./examples_pipeline/hough.jpg "Hough"
 4. Apply Hough Transform (detect straigt lines)
+[image5]: ./examples_pipeline/final.jpg "Final"
 5. Combine the relevant lines to 1 main lines for the left line and one for the right
 
 For step 1. till. 4. I have used the settings that were found during the lessons. The parameters I have found there, were also very succesful with:
@@ -42,43 +45,58 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 ### 2. Challenge exercise
 
-Challenge options:
-- part of front ... is visible
-- corners
-- so mask is working now, later on 2nd degree function in stead of linear
+When doing the challenge exercise, is wasn't that smooth anymore. The following issues where there.
 
-between 4 and 6 seconds
-- shadow of trees
-- viaduct with more light
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+#### different region/size
 
-![alt text][image1]
+This video had a different size and there was also part of the bonnet. This could be solved by updating the region.
 
+#### corner
 
-### 2. Identify potential shortcomings with your current pipeline
+in this video the road and car were making a corner to the right. This also had impact on the region that had to shift to the right. In a production system, probably the turning angle should be a parameter here.
 
+#### shadow from trees and a viaduct with a different color
 
-One potential shortcoming would be what would happen when ... 
+This was actually the hardest problem. This could be improved by:
+- reducing the masking area
+- also creating a mask between the 2 lines (a triangle)
 
-Another shortcoming could be ...
+After this, I had a reasonable result, allthough more improvements are required. See next section.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Identify potential shortcomings with your current pipeline
 
-A possible improvement would be to ...
+Potential shortcomings are:
+1. Different weather condition would probably not work. Can now be seen with the shadow part. Rain and especially snow would probably not work.
+2. When making corners, the current mask will not work
+3. When making corners, a straight line will not map
+4. Worse line markers than this road could also cause issues.
 
-Another potential improvement could be to ...
+### 4. Suggest possible improvements to your pipeline
 
+Possible improvements could be:
+1. Better tuning of parameters with all kind of weather/road conditions. I would also propose an automated learning mechanisme for the parameters (You know the slope of the line a toptimal condition and could use it optimise it with other conditions)
+2. The mask should be flexible and adaptable the at least the steering angle of the car.
+3. Current the line is 1st order degree, this could 2nd or higher order degree
+4. Currently the line is calculated per picture. This could be changed in something that also take into account the previous values.
 
-...
-Started with the parameters that found during the previous exercises. They weren't actually that good, especially a lot of noise where the lines crossed the horizon.
-1. First try: create a better fitting mask. That worked, probably is this area is not easy to get right with this technic.
-2. Video white right line is working fine: 
-3. Video left yellow has some artifacts, so make tool to extract images that have problems (extract_video_still) 
-4. issue that Hough lines always goes from left to right (ordered)
+## Final videos
 
+1. Solid white right lane
+[![Solid white right lane](https://img.youtube.com/vi/lgqsa1rrIg0/0.jpg)](https://www.youtube.com/watch?v=lgqsa1rrIg0)
 
-Files:
+2. Solid yellow left lane
+[![Solid yellow left line](https://img.youtube.com/vi/5oZ21K6bMeQ/0.jpg)](https://www.youtube.com/watch?v=5oZ21K6bMeQ)
 
-Notes:
-- Notebook not so good with global vars
+3. Challenge
+[![Challenge](https://img.youtube.com/vi/OY0xBk-eSqs/0.jpg)](https://www.youtube.com/watch?v=OY0xBk-eSqs)
+
+## Files
+
+The following files have been used for testing:
+- extract_video_still.py: extract images from all steps in a pipeline from a mp4
+- show_region.py: show a region of an image
+- challenge.py: the pipeline script for the challenge video (same as in notebook)
+
+[This is a link to notebook of this exercise saved as html](P1.html)
+
